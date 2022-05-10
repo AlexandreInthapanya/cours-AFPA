@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>nodejs & ejs</title>
+    <meta charset="utf-8">
+    <style>
+	body {
+		margin: 40px;
+	}
+
+	.sidebar {
+		grid-area: sidebar;
+	}
+
+	.content {
+		grid-area: content;
+	}
+
+	.header {
+		grid-area: header;
+		text-align: center;
+	}
+
+	.wrapper {
+		display: grid;
+    grid-gap: 10px;
+		grid-template-columns: 1fv  1fv  1fv;
+		grid-template-areas:
+               "....... header  header"
+							 "sidebar content content";
+		background-color: #fff;
+		color: #444;
+	}
+
+	.box {
+		background-color: #444;
+		color: #fff;
+		border-radius: 5px;
+		padding: 20px;
+		font-size: 150%;
+	}
+
+	.header {
+		background-color: #999;
+	}
+
+
+	.imgDiv {
+			margin: 0 auto;
+	}
+	img {
+	    vertical-align: middle;
+	}
+	.img-responsiv {
+    max-width: 100%;
+    /*
+    pour la qualite de l'image (a verifier...)
+    */
+    -ms-interpolation-mode: bicubic;
+    image-rendering: optimizeQuality;
+	}
+
+
+   </style>
+</head>
+<body>
+	
+	 <div class="wrapper">
+	 	<div class="box header"><h1>Hello, dear <%=data.login%>, welcome to...</h1></div>
+			<div class="box sidebar">
+				<ul>
+					<% data.hobbies.forEach( (item) => { %>
+			      		<li> <%=item%> </li>
+			        <% }); %>
+				</ul>
+			</div>
+		<div class="box content imgDiv">
+			<img class="img-responsiv" src=https://images.unsplash.com/photo-1649837867356-6c7ef7057f32?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDExNHw2c01WalRMU2tlUXx8ZW58MHx8fHw%3D&amp;auto=format&amp;fit=crop&amp;w=600&amp;q=60>
+		</div>
+	</div>
+
+</body>
+</html>

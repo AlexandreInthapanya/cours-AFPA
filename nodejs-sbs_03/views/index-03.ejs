@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>.NodeJS.</title>
+	<style type="text/css" media="screen">
+        body {
+            background-color: skyblue;
+            text-decoration-color: white;
+            font-size: 3em;
+        }
+    </style>
+</head>
+<body>
+	
+	<hr/>
+	<h1>Hello, dear <%= user %>, welcome to...</h1>
+	<hr/>
+	<ul>
+		<% hobbies.forEach( (item) => { %>
+      		<li> <%=item%> </li>
+        <% }); %>
+	</ul>
+
+</body>
+</html>

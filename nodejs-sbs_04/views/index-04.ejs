@@ -1,0 +1,19 @@
+		<%- include('header', {
+			title: 'Home'
+		}) -%>
+
+		<include src="./header.ejs"></include>
+		
+		<hr/>
+		<h1>Hello, dear <%= user %>, welcome to...</h1>
+		<hr/>
+		<ol class="list-group list-group-numbered">
+			<% hobbies.forEach( (item) => { %>
+				<li class="list-group-item"> <%=item%> </li>
+			<% }); %>
+		</ol>
+		
+		
+		<!--                       FOOTER                      -->
+		<%- include('footer') -%>
+	
